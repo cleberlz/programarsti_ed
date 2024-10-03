@@ -13,23 +13,29 @@ body {
     border-radius: 5px;
 }
 
-.form-control, .btn {
+.form-control,
+.btn {
     border-radius: 0.5rem;
 }
 
 .btn-consultar {
-    background-color: #28a745; /* Verde */
+    background-color: #28a745;
+    /* Verde */
     color: white;
     font-weight: bold;
-    padding: 10px 20px; /* Mais espaço interno */
+    padding: 10px 20px;
+    /* Mais espaço interno */
     transition: background-color 0.3s, transform 0.2s;
 }
 
 .btn-consultar:hover {
-    background-color: #218838; /* Verde escuro */
-    transform: translateY(-2px); /* Leve efeito de elevação */
+    background-color: #218838;
+    /* Verde escuro */
+    transform: translateY(-2px);
+    /* Leve efeito de elevação */
 }
 
 .btn-consultar:focus {
-    box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.25); /* Sombra ao focar */
+    box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.25);
+    /* Sombra ao focar */
 }

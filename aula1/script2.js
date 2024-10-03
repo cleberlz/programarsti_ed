@@ -1,8 +1,35 @@
 $(document).ready(function () {
     // Função para carregar cidades
+    function carregarCidades(siglaEstado, idCidadeSelecionada = null) {
+        $('select[name=cidade]').empty(); // Limpa o select de cidades
+        $('select[name=cidade]').append(`<option value="" disabled selected>Selecione uma cidade</option>`); // Adiciona opção padrão
+
+        $.ajax({
+            url: `https://servicodados.ibge.gov.br/api/v1/localidades/estados/${siglaEstado}/municipios?orderBy=nome`,
+            method: 'GET',
+            dataType: 'json',
+            success: function (cidades) {
+                cidades.forEach(function (cidade) {
+                    $('select[name=cidade]').append(`<option value="${cidade.id}">${cidade.nome}</option>`);
+                });
+
+                // Se um ID de cidade selecionada foi passado, selecione a opção correspondente
+                if (idCidadeSelecionada) {
+                    $('select[name=cidade]').val(idCidadeSelecionada);
+                }
+            },
+            error: function () {
+                alert('Erro ao consultar as cidades.');
+            }
+        });
+    }
+
+
+
     $('input[name=cep]').mask('00000-000');
     $('input[name=numero]').mask('#');
-    
+
+
     /*busca estados pelo ibge*/
     $.ajax({
         url: 'https://servicodados.ibge.gov.br/api/v1/localidades/estados?orderBy=nome',
@@ -23,27 +50,9 @@ $(document).ready(function () {
 
     $('select[name=uf]').on('change', function () {
         const siglaEstado = $(this).val();
-        $('select[name=cidade]').empty(); // Limpa o select de cidades
-        $('select[name=cidade]').append(`<option value="" disabled selected>Selecione uma cidade</option>`); // Adiciona opção padrão
-        $.ajax({
-            url: `https://servicodados.ibge.gov.br/api/v1/localidades/estados/${siglaEstado}/municipios?orderBy=nome`,
-            method: 'GET',
-            dataType: 'json',
-            success: function (cidades) {
-                cidades.forEach(function (cidade) {
-                    $('select[name=cidade]').append(`<option value="${cidade.id}">${cidade.nome}</option>`);
-                });
-                
-                if (resposta) {
-                    $('select[name=cidade]').val(resposta.ibge);  
-                    resposta = null;  
-                } 
-            },
-            error: function () {
-                alert('Erro ao consultar as cidades.');
-            }
-        });
+        carregarCidades(siglaEstado);
     });
+
 
     /*$('input[name=numero]').on('keyup', function (event) {
         this.value = this.value.replace(/[^0-9]/g, ''); 
@@ -58,6 +67,14 @@ $(document).ready(function () {
         let cep = $('input[name=cep]').val();
 
         cep = cep.replace('-', '');
+        /* if (cep.length == 8) {
+             $('input[name=cep]').removeClass('is-invalid');
+         } else if (cep.length == 0) {
+             $('input[name=cep]').removeClass('is-invalid');
+         } else {
+             $('input[name=cep]').addClass('is-invalid')
+         }*/
+        // alert(`CEP: https://viacep.com.br/ws/${cep}/json/`);
 
         if (cep.length == 8) {
             $.ajax('https://viacep.com.br/ws/' + cep + '/json/').done(function (data) {
@@ -69,9 +86,10 @@ $(document).ready(function () {
                 $('input[name=cep]').removeClass('is-invalid');
 
                 $('input[name=cep]').val(resposta.cep);
-                $('select[name=uf]').val(resposta.uf).change();
-                $('input[name=rua]').val(resposta.logradouro); 
+                $('select[name=uf]').val(resposta.uf);
+                $('input[name=rua]').val(resposta.logradouro);
                 $('input[name=bairro]').val(resposta.bairro);
+                carregarCidades(resposta.uf, resposta.ibge);
             });
         }
     });
