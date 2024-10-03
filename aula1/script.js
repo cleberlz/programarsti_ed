@@ -89,12 +89,7 @@ $(document).ready(function () {
                 $('select[name=uf]').val(resposta.uf);
                 $('input[name=rua]').val(resposta.logradouro);
                 $('input[name=bairro]').val(resposta.bairro);
-                //$('input[name=cidade]').val(resposta.localidade);
-                carregarCidades(resposta.uf);
                 carregarCidades(resposta.uf, resposta.ibge);
-                //$('select[name=cidade]').val(resposta.ibge);
-                
-                //$('#estado').val(resposta.uf);
             });
         }
     });
