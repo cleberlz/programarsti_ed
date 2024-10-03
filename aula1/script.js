@@ -1,9 +1,10 @@
 $(document).ready(function () {
-    function carregarCidades(siglaEstado) {
+    // Função para carregar cidades
+    function carregarCidades(siglaEstado, idCidadeSelecionada = null) {
         $('select[name=cidade]').empty(); // Limpa o select de cidades
         $('select[name=cidade]').append(`<option value="" disabled selected>Selecione uma cidade</option>`); // Adiciona opção padrão
-    
-        $.ajax({  
+
+        $.ajax({
             url: `https://servicodados.ibge.gov.br/api/v1/localidades/estados/${siglaEstado}/municipios?orderBy=nome`,
             method: 'GET',
             dataType: 'json',
@@ -11,13 +12,19 @@ $(document).ready(function () {
                 cidades.forEach(function (cidade) {
                     $('select[name=cidade]').append(`<option value="${cidade.id}">${cidade.nome}</option>`);
                 });
+
+                // Se um ID de cidade selecionada foi passado, selecione a opção correspondente
+                if (idCidadeSelecionada) {
+                    $('select[name=cidade]').val(idCidadeSelecionada);
+                }
             },
             error: function () {
                 alert('Erro ao consultar as cidades.');
             }
         });
     }
-    
+
+
 
     $('input[name=cep]').mask('00000-000');
     $('input[name=numero]').mask('#');
@@ -43,7 +50,7 @@ $(document).ready(function () {
 
     $('select[name=uf]').on('change', function () {
         const siglaEstado = $(this).val();
-        carregarCidades(siglaEstado); 
+        carregarCidades(siglaEstado);
     });
 
 
@@ -83,8 +90,10 @@ $(document).ready(function () {
                 $('input[name=rua]').val(resposta.logradouro);
                 $('input[name=bairro]').val(resposta.bairro);
                 //$('input[name=cidade]').val(resposta.localidade);
-                carregarCidades(resposta.uf); 
-                $('select[name=cidade]').val(resposta.ibge);
+                carregarCidades(resposta.uf);
+                carregarCidades(resposta.uf, resposta.ibge);
+                //$('select[name=cidade]').val(resposta.ibge);
+                
                 //$('#estado').val(resposta.uf);
             });
         }
