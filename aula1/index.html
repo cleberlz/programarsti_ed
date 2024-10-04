@@ -29,16 +29,25 @@
                 <form>
                     <div class="row mb-3">
                         <div class="col-md-6">
-                            <input type="text" class="form-control" placeholder="Nome">
+                            <input type="text" class="form-control" placeholder="Nome" name="nome">
                         </div>
                         <div class="col-md-6">
-                            <input type="text" class="form-control" placeholder="Sobrenome">
+                            <input type="text" class="form-control" placeholder="Sobrenome" name="sobrenome">
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <input type="text" class="form-control" placeholder="E-mail" name="email">
+                        </div>
+                        <div class="col-md-6">
+                            <input type="text" class="form-control" placeholder="Telefone" name="telefone">
                         </div>
                     </div>
                     <div class="row mb-3">
                         <div class="col-12">
                             <div class="input-group has-validation">
-                                <input type="text" name="cep" class="form-control" placeholder="CEP" pattern="[0-9]{5}-[\d]{3}">
+                                <input type="text" name="cep" class="form-control" placeholder="CEP"
+                                    pattern="[0-9]{5}-[\d]{3}">
                                 <div class="invalid-feedback">
                                     CEP Inválido
                                 </div>
@@ -70,7 +79,7 @@
                         </div>
                         <div class="col-md-5">
                             <select name="uf" class="form-select">
-                               <!-- <option value="" disabled selected>Selecione o estado</option>
+                                <!-- <option value="" disabled selected>Selecione o estado</option>
                                 <option value="AC">Acre</option>
                                 <option value="AL">Alagoas</option>
                                 <option value="AP">Amapá</option>
