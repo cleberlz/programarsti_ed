@@ -5,32 +5,51 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- Adicionando Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"
         integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <title>Aula 2</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
-    <script src="script.js"></script>
 </head>
 
-<body>
-    <div>
-        <input type="button" id="enviar" name="enviar" value="Enviar">
-        <input type="button" id="limpar" name="limpar" value="Limpar">
-        <div class="" id="resultado1"></div>
+<body class="bg-light">
+    <div class="container mt-5">
+        <!-- Primeiro bloco -->
+        <div class="card mb-4 shadow-sm">
+            <div class="card-body">
+                <div class="text-center mb-3">
+                    <input type="button" id="enviar" name="enviar" value="Enviar" class="btn btn-primary me-2">
+                    <input type="button" id="limpar" name="limpar" value="Limpar" class="btn btn-danger">
+                </div>
+                <div id="resultado1" class="border rounded p-3 bg-white"></div>
+            </div>
+        </div>
+
+        <!-- Segundo bloco -->
+        <div class="card mb-4 shadow-sm">
+            <div class="card-body">
+                <div class="text-center mb-3">
+                    <input type="button" id="enviar2" name="enviar2" value="Enviar" class="btn btn-primary me-2">
+                    <input type="button" id="limpar2" name="limpar2" value="Limpar" class="btn btn-danger">
+                </div>
+                <div id="resultado2" class="border rounded p-3 bg-white"></div>
+            </div>
+        </div>
+
+        <!-- Terceiro bloco -->
+        <div class="card mb-4 shadow-sm">
+            <div class="card-body">
+                <div class="text-center mb-3">
+                    <input type="button" id="enviar3" name="enviar3" value="Enviar" class="btn btn-primary me-2">
+                    <input type="button" id="limpar3" name="limpar3" value="Limpar" class="btn btn-danger">
+                </div>
+                <div id="resultado3" class="border rounded p-3 bg-white"></div>
+            </div>
+        </div>
     </div>
-    <br>
-    <div>
-        <input type="button" id="enviar2" name="enviar2" value="Enviar">
-        <input type="button" id="limpar2" name="limpar2" value="Limpar">
-        <div class="" id="resultado2"></div>
-    </div>
-    <br>
-    <div>
-        <input type="button" id="enviar3" name="enviar3" value="Enviar">
-        <input type="button" id="limpar3" name="limpar3" value="Limpar">
-        <div class="" id="resultado3"></div>
-    </div>
+
+    <!-- Adicionando o JavaScript do Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
