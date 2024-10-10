@@ -1,6 +1,6 @@
 $(document).ready(function() {
     $.getJSON("https://randomuser.me/api/?results=10&nat=br", function (data) {
-        $("table tbody").empty(); // Limpa o vas s
+        $("table tbody").empty(); 
         
         for (var i = 0; i < data.results.length; i++) {
             var out = "<tr>";
