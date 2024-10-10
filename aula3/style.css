@@ -1,9 +1,50 @@
-table th {
-    white-space: nowrap;
+/* styles.css */
+
+/* Header styling */
+header {
+  background: linear-gradient(135deg, #343a40 40%, #007bff 100%);
+  color: #fff;
 }
 
-img {
-    border-radius: 5px;
-    width: 50px;
-    height: 100%;
+header h1 {
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+/* Table styling */
+.table-hover tbody tr:hover {
+  background-color: #f8f9fa !important;
+}
+
+.table th, .table td {
+  vertical-align: middle;
+}
+
+.table img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.table thead {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.table-responsive {
+  background-color: #fff;
+}
+
+/* Footer styling */
+footer {
+  background-color: #343a40;
+}
+
+footer a {
+  text-decoration: none;
+  color: #007bff;
+}
+
+footer a:hover {
+  color: #0056b3;
 }
