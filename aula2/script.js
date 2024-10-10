@@ -59,4 +59,25 @@ $(document).ready(function () {
     $("#limpar3").on("click", function (event) {
         $("div[id^=resultado3]").empty();
     });
+
+    $("#enviar4").on("click", function (event) {
+        $.getJSON("./data4.json", function (data) {
+            for (var i in data.results) {
+                $("#resultado4").append(data.results[i].gender);
+                $("#resultado4").append('<br>');
+                $("#resultado4").append(data.results[i].name.title);
+                $("#resultado4").append('<br>');
+                $("#resultado4").append(data.results[i].email);
+                $("#resultado4").append('<br>');
+                $("#resultado4").append(data.results[i].picture.large);
+                $("#resultado4").append('<br>');
+            }
+            $("#resultado4").append(data.info.seed);
+
+        });
+    });
+
+    $("#limpar4").on("click", function (event) {
+        $("div[id^=resultado4]").empty();
+    });
 });
