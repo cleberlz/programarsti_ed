@@ -27,7 +27,7 @@ $(document).ready(function() {
           },
           dataFilter: function(data) {
             // Parse the returned API data and modify it the way datatable needs.
-            var json = jQuery.parseJSON( data ); 
+            var json = jQuery.parseJSON(data); 
             json.data = json.results;
             
             // console.log(json);
@@ -77,9 +77,9 @@ $(document).ready(function() {
             .eq($(this).index())
             .text();
         // console.log(title);
-        /* $(this).append(
+         $(this).append(
             '<br><input type="text" placeholder="' + title + '" data-index="' + i + '" />'
-        ); */
+        ); 
     });
 
     // Filter event handler
