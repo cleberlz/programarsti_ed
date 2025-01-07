@@ -1,0 +1,226 @@
+/* Fontes */
+@font-face {
+    font-family: 'Roboto-Regular';
+    src: url('../assets/fontes/Roboto/Roboto-Regular.ttf')
+}
+
+/* Cores */
+:root {
+    --cor-facebook: #1B78F2;
+    --cor-facebook-hover: #1B8EF2;
+    --cor-google: #F23838;
+    --cor-google-hover: #f55050;
+}
+
+.custom-login-container {
+    max-width: 500px; 
+    margin: 100px auto 50px auto; 
+    padding: 30px; 
+    border-top: 4px solid #007bff; 
+    border-bottom: 4px solid #007bff; 
+    background-color: #f9f9f9;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden; 
+    font-family: 'Roboto-Regular';
+    border-radius: 5px;
+}
+
+.custom-login-title {
+    font-size: 2rem; 
+    margin-bottom: 20px;
+    text-align: center;
+    color: #333;
+    letter-spacing: 0.1em; 
+}
+
+#custom-login-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; 
+    letter-spacing: 0.05em; 
+}
+
+.custom-input-group {
+    width: 100%;
+    margin-bottom: 20px;
+    letter-spacing: 0.05em; 
+}
+
+.custom-input-group label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #555;
+    letter-spacing: 0.05em; 
+}
+
+.custom-input-group input[type="email"],
+.custom-input-group input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    font-size: 1.1rem;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    letter-spacing: 0.05em;
+}
+
+.custom-error-message {
+    display: none;
+    color: #ff0000;
+    font-size: 0.9rem;
+    margin-top: 5px;
+    letter-spacing: 0.05em;
+}
+
+.custom-login-btn {
+    width: 50%;
+    padding: 14px;
+    margin-top: 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: background-color 0.3s ease;
+    letter-spacing: 0.05em; 
+    align-items: center;
+    margin-right: 10%;
+}
+
+.custom-login-btn:hover {
+    background-color: #0056b3;
+}
+
+.custom-social-login {
+    margin-top: 25px;
+    text-align: center; 
+}
+
+.custom-social-login p {
+    margin-bottom: 15px;
+    color: #666;
+    letter-spacing: 0.05em; 
+    font-family: 'Roboto-Regular';
+}
+
+.custom-social-btn-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 10px; 
+    width: 100%; 
+}
+
+.custom-social-btn {
+    padding: 12px 24px;
+    background-color: #fff;
+    color: #333;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    flex: 1; 
+    letter-spacing: 0.05em; 
+    margin: 0 auto;
+}
+
+.custom-social-btn:hover {
+    background-color: #f0f0f0;
+}
+
+#custom-facebook-login {
+    background-color: var(--cor-facebook); 
+    color: #fff;
+    border-color: var(--cor-facebook);
+    align-items: center;
+    letter-spacing: 1px;
+    font-family: 'Roboto-Regular';
+}
+
+#custom-facebook-login:hover {
+    background-color: var(--cor-facebook-hover); 
+}
+
+#custom-google-login {
+    background-color: var(--cor-google); 
+    color: #fff;
+    border-color: var(--cor-google);
+    align-items: center;
+    letter-spacing: 1px; 
+    font-family: 'Roboto-Regular';
+}
+
+#custom-google-login:hover {
+    background-color: var(--cor-google-hover); 
+}
+
+.nav-icon.active a {
+    background-color: rgba(255, 255, 255, 0.2); 
+    line-height: 20px;
+}
+
+
+/* Media query para telas menores */
+@media (max-width: 768px) {
+    
+    .custom-login-container {
+        margin: 50px 20px; 
+        padding: 20px; 
+        max-width: 90%; 
+    }
+
+    .custom-login-title {
+        font-size: 1.8rem;
+        margin-bottom: 15px; 
+    }
+
+    .custom-input-group input[type="email"],
+    .custom-input-group input[type="password"] {
+        padding: 10px; 
+        font-size: 1rem; 
+    }
+
+    .custom-login-btn {
+        padding: 12px; 
+        font-size: 1.1rem; 
+        width: 100%;
+        max-width: 300px; 
+        margin: 0 auto; 
+    }
+
+    .custom-social-btn-container {
+        display: flex;
+        flex-direction: column; 
+        align-items: center; 
+        text-align: center; 
+        gap: 10px; 
+        width: 100%; 
+    }
+
+    .custom-social-btn {
+        width: 100%; 
+        max-width: 300px; 
+    }
+
+    #custom-facebook-login {
+        background-color: var(--cor-facebook); 
+        color: #fff;
+        border: 2px solid var(--cor-facebook);
+    }
+
+    #custom-facebook-login:hover {
+        background-color: var(--cor-facebook-hover); 
+    }
+
+    #custom-google-login {
+        background-color: var(--cor-google); 
+        color: #fff;
+        border: 2px solid var(--cor-google);
+    }
+
+    #custom-google-login:hover {
+        background-color: var(--cor-google-hover); 
+    }
+}

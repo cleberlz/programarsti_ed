@@ -1,0 +1,244 @@
+/* Fontes */
+@font-face {
+    font-family: 'Roboto-Medium';
+    src: url('../assets/fontes/Roboto/Roboto-Medium.ttf')
+}
+
+@font-face {
+    font-family: 'Roboto-Thin';
+    src: url('../assets/fontes/Roboto/Roboto-Thin.ttf')
+}
+
+@font-face {
+    font-family: 'Roboto-Regular';
+    src: url('../assets/fontes/Roboto/Roboto-Regular.ttf')
+}
+
+.info-topo {
+    position: absolute;
+    top: 190px;
+    left: 10px;
+    font-size: 12px;
+    color: #333;
+    opacity: 0.8; 
+    padding: 5px; 
+}
+
+.info-topo h1 {
+    margin: 0;
+    font-size: 12px;
+    font-family: 'Roboto-Thin';
+    letter-spacing: 1px;
+}
+
+/* Estilo dos filtros */
+.filters {
+    position: absolute;
+    top: 230px; 
+    left: 10px;
+    width: 220px; 
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.9); 
+    border: 1px solid #ddd;
+    border-radius: 5px; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+    box-sizing: border-box; 
+    font-family: 'Roboto-Medium';
+}
+
+.filters h2 {
+    margin: 0 0 10px 0;
+    font-size: 16px;
+}
+
+.filter-section {
+    margin-bottom: 10px;
+    text-align: left; 
+}
+
+.filter-section label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 14px;
+}
+
+.filter-section select {
+    width: 100%;
+    padding: 5px;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    box-sizing: border-box; 
+}
+
+.filters button {
+    display: block;
+    margin: 0 auto; 
+    padding: 10px 20px; 
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    font-size: 14px;
+    cursor: pointer;
+    box-sizing: border-box; 
+}
+
+.filters button:hover {
+    background-color: #555;
+}
+
+/* Estilo dos produtos */
+.products-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 100px;
+    padding: 0 10px;
+    margin-left: 20%;
+    font-family: 'Roboto-Thin';
+    letter-spacing: 1px;
+    margin-bottom: 40px;
+}
+
+.products-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 100px; 
+    padding: 0 10px;
+    box-sizing: border-box;
+}
+
+.product-link {
+    text-decoration: none;
+    color: inherit;
+    flex: 1 1 calc(25% - 20px); 
+    margin: 10px; 
+    box-sizing: border-box;
+}
+
+.product {
+    border: 1px solid #ddd; 
+    border-radius: 8px; 
+    overflow: hidden; 
+    background-color: #fff; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    transition: box-shadow 0.3s ease; 
+}
+
+.product:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Container da imagem do produto */
+.image-container {
+    position: relative;
+    width: 100%;
+    height: auto;
+}
+
+.product-image {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.product-image.normal {
+    display: block;
+}
+
+.product-image.hover {
+    display: none;
+}
+
+/* Mostrar imagem de hover */
+.product:hover .product-image.normal {
+    display: none;
+}
+
+.product:hover .product-image.hover {
+    display: block;
+}
+
+/* Informações do produto */
+.product-info {
+    padding: 15px;
+}
+
+.product-info h4 {
+    font-size: 16px;
+    margin: 0;
+    font-weight: bold;
+    color: black;
+    text-align: center;
+}
+
+.product-sizes {
+    margin: 10px 0;
+}
+
+.size-square {
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    line-height: 25px;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-right: 5px;
+    font-size: 14px;
+    color: #333333e1;
+    cursor: pointer;
+}
+
+.size-square:hover {
+    background-color: #eee;
+}
+
+.product-price {
+    font-size: 18px;
+    color: rgb(77, 76, 76); 
+    font-weight: bold;
+    margin: 0;
+    text-align: center;
+}
+
+/* Estilos para telas de até 768px */
+@media (max-width: 768px) {
+    .info-topo {
+        top: 160px;
+        left: 5px;
+        font-size: 11px;
+        padding: 4px;
+    }
+
+    .info-topo h1 {
+        font-size: 11px;
+    }
+
+    .filters {
+        top: 200px;
+        width: 100%;
+        padding: 10px;
+        border-radius: 0;
+        box-shadow: none;
+    }
+
+    .products-container {
+        margin-left: 0;
+        margin-top: 50px;
+        padding: 0;
+        margin-top: 70%;
+    }
+
+    .product-link {
+        flex: 1 1 calc(50% - 20px);
+        margin: 10px;
+    }
+
+    .product {
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+    }
+}

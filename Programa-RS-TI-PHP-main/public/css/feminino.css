@@ -1,0 +1,399 @@
+/* Fontes */
+@font-face {
+    font-family: 'Roboto-Medium';
+    src: url('../assets/fontes/Roboto/Roboto-Medium.ttf')
+}
+
+@font-face {
+    font-family: 'Roboto-Thin';
+    src: url('../assets/fontes/Roboto/Roboto-Thin.ttf')
+}
+
+@font-face {
+    font-family: 'Roboto-Regular';
+    src: url('../assets/fontes/Roboto/Roboto-Regular.ttf')
+}
+
+/* Estilo da info topo */
+.info-topo {
+    position: absolute;
+    top: 190px; 
+    left: 10px;
+    font-size: 12px;
+    color: #333;
+    opacity: 0.8; 
+    padding: 5px; 
+}
+
+.info-topo h1 {
+    margin: 0;
+    font-size: 12px;
+    font-family: 'Roboto-Thin';
+    letter-spacing: 1px;
+}
+
+/* Estilo dos filtros */
+.filters {
+    position: absolute;
+    top: 230px; 
+    left: 10px;
+    width: 220px; 
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.9); 
+    border: 1px solid #ddd;
+    border-radius: 5px; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+    box-sizing: border-box; 
+    font-family: 'Roboto-Medium';
+}
+
+.filters h2 {
+    margin: 0 0 10px 0;
+    font-size: 16px;
+}
+
+.filter-section {
+    margin-bottom: 10px;
+    text-align: left; 
+}
+
+.filter-section label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 14px;
+}
+
+.filter-section select {
+    width: 100%;
+    padding: 5px;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    box-sizing: border-box; 
+}
+
+.filters button {
+    display: block;
+    margin: 0 auto; 
+    padding: 10px 20px; 
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    font-size: 14px;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+
+.filters button:hover {
+    background-color: #555;
+}
+
+/* Estilo dos produtos */
+.products-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 100px;
+    padding: 0 10px;
+    margin-left: 20%;
+    margin-bottom: 40px;
+    font-family: 'Roboto-Regular';
+}
+
+.product {
+    flex: 1 1 calc(25% - 20px); 
+    margin: 10px; 
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+    text-align: center;
+    background-color: #fff;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.product:hover {
+    transform: scale(1.02);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); 
+}
+
+
+.quantity-selector {
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    text-align: center;
+}
+
+.quantity-input {
+    width: 40px;
+    text-align: center;
+    margin: 0 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.adjust-button {
+    background-color: #C7B084;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    width: 30px;
+    height: 30px;
+    font-size: 18px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+}
+
+.product-info {
+    text-align: center; 
+}
+
+/* Estilo da imagem dos produtos */
+.image-container {
+    position: relative;
+    width: 100%;
+    padding-top: 100%;
+    overflow: hidden;
+}
+
+.product .product-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1; 
+}
+
+.product:hover .product-image.normal {
+    opacity: 0;
+}
+
+.product:hover .product-image.hover {
+    opacity: 1;
+}
+
+/* Efeito de troca de imagem ao passar o mouse */
+.product .product-image.hover {
+    opacity: 0;
+}
+
+.product:hover .product-image.hover {
+    opacity: 1;
+}
+
+.product:hover .product-image.normal {
+    opacity: 0;
+}
+
+/* Estilo Informações do produto */
+.product-info {
+    padding: 10px; 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.product-info h2 {
+    font-size: 16px;
+    margin: 5px 0; 
+    font-weight: bold;
+}
+
+.product-info .description {
+    font-size: 12px; 
+    color: #666;
+    margin: 5px 0; 
+}
+
+/* Preço do produto */
+.price {
+    font-size: 14px; 
+    color: #000;
+    margin: 5px 0; 
+}
+
+/* Botões de ajuste */
+.adjust-buttons {
+    display: flex;
+    justify-content: center;
+    margin: 5px 0; 
+}
+
+.adjust-button {
+    width: 30px; 
+    height: 30px;
+    margin: 0 5px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 16px; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.adjust-button:hover {
+    background-color: #555;
+}
+
+/* Botão de compra */
+.buy-button {
+    width: calc(100% - 20px);
+    padding: 8px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px; 
+    cursor: pointer;
+    transition: background-color 0.3s;
+    text-align: center;
+    margin: 10px auto 0;
+    display: block;
+}
+
+.buy-button:hover {
+    background-color: #555;
+}
+
+/* Estilo do container da mensagem de add ao card*/
+.message {
+    display: none; 
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+    background-color: #e0f7fa; 
+    color: #00796b; 
+    border: 1px solid #004d40; 
+    font-size: 16px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+}
+
+.message.show {
+    display: block;
+}
+
+/* Estilo dos botoes para mudar de pagina */
+.pagination {
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 50px; 
+    margin-left: 20%;
+    font-family: 'Roboto-Regular';
+}
+
+.pagination button {
+    padding: 10px 20px;
+    margin: 0 10px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #C7B084; 
+    border: none; 
+    color: #fff; 
+}
+
+.pagination span {
+    font-size: 16px;
+    color: #333; 
+}
+
+@media (max-width: 768px) {
+    .info-topo {
+        top: 120px;
+        left: 5px;
+        font-size: 8px;
+        padding: 2px;
+        margin-top: 40px;
+        margin-left: 10px;
+    }
+
+    .filters {
+        top: 150px;
+        width: 100%;
+        padding: 5px;
+        font-size: 12px;
+        margin-top: 10%;
+    }
+
+    .filters h2 {
+        font-size: 12px;
+    }
+
+    .filter-section label,
+    .filter-section select {
+        font-size: 10px;
+    }
+
+    .filters button {
+        padding: 6px 12px;
+    }
+
+    .products-container {
+        margin-left: 0;
+        margin-top: 55%;
+
+    }
+
+    .product {
+        flex: 1 1 calc(50% - 20px); 
+    }
+
+    .quantity-input {
+        width: 30px;
+        font-size: 12px;
+    }
+
+    .adjust-button {
+        width: 20px;
+        height: 20px;
+        font-size: 14px;
+    }
+
+    .product-info h2 {
+        font-size: 12px;
+    }
+
+    .product-info .description {
+        font-size: 9px;
+    }
+
+    .price {
+        font-size: 10px;
+    }
+
+    .adjust-buttons .adjust-button {
+        width: 20px;
+        height: 20px;
+    }
+
+    .buy-button {
+        padding: 4px;
+        font-size: 10px;
+    }
+
+    .pagination {
+        margin-left: 0;
+    }
+
+    .pagination button {
+        padding: 6px 12px;
+    }
+
+    .pagination span {
+        font-size: 12px;
+    }
+}
+
+
